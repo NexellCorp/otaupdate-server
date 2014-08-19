@@ -223,7 +223,7 @@ def query_update(request, device, ota_id, version):
             'download_url': rom.download_url,
             'md5sum': rom.md5sum,
             'version': rom.version,
-            'date': rom.date,
+            'date': '%04d%02d%02d-%02d%02d' % (rom.date.year, rom.date.month, rom.date.day, rom.date.hour, rom.date.minute),
             'changelog': rom.change_log,
         })
     )

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block head %}
+{% if page_type == 'new' %}
+Add ROM
+{% else %}
+Edit ROM
+{% endif %}
+{% endblock %}
+{% block content %}
+<form method="post" action=".">{% csrf_token %}
+    <table>
+ 	<tbody>
+	{% for field in form %}
+        <tr>
+            <td>
+	    <label for="{{ field.label }}" style="display:inline-block;vertical-align;middle">
+		{{ field.label_tag }}
+	    </label>
+	    </td>
+            <td>
+	    {{ field }}
+	    </td>
+	</tr>
+        {% endfor %}
+	</tbody>
+    </table>
+{% if page_type == 'new' %}
+    <input type="submit" value="add" />
+{% else %}
+    <input type="submit" value="save" />
+{% endif %}
+</form>
+{% endblock %}

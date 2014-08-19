@@ -1,0 +1,58 @@
+body {
+    color: LavenderBlush;
+    /*background: #0A6ECD;*/
+    /*background: LightSteelBlue;*/
+    background: Green;
+    /*padding: 0 5em;*/
+    padding: 0 0;
+    margin: 0
+    /*padding: 0 0 0 0;*/
+    /*margin: 0 0 0 0*/
+}
+
+h1 {
+    /*padding: 2em 1em;*/
+    /*background: #675*/
+    color: LavenderBlush;
+    background: OliveDrab;
+    width: 400px;
+    padding: 0 0 0 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:link     {
+    color:#007cd0;
+    text-decoration:none
+}
+
+a:visited  {
+    color:#007cd0;
+    text-decoration:none
+}
+
+a:active   {
+    color:#007cd0;
+    text-decoration:none
+}
+
+a:hover    {
+    color:#0099ff;
+    text-decoration:none
+}
+
+
+h2 {
+    background: #5ABEFF;
+    color: #bf8;
+    border-top; 1px dotted #fff;
+    margin-top: 2em
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+   border: 1px solid black;
+}

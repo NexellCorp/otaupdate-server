@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+<div class="rom_title">
+    <table>
+        <tr>
+            <th>ROM List</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            {% if user.username %}
+            <th>
+                <a href="/roms/new/">Add</a>
+            </th>
+            {% endif %}
+        </tr>
+    </table>
+</div>
+{% endblock %}

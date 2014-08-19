@@ -1,0 +1,45 @@
+{% if roms %}
+<p>
+    <table class="table">
+        <thead>
+            <tr class="table_title">
+                <th width="8%">Device</th>
+                <th width="16%">ROM Name</th>
+                <th width="12%">OTA ID</th>
+                <th width="12%">Version</th>
+                <th width="12%">Date</th>
+                {% if user.username %}
+                <th width="12%">Download URL</th>
+                <th>Operation</th>
+                {% else %}
+                <th>Download URL</th>
+                {% endif %}
+            </tr>
+            {% for rom in roms %}
+            <tr class="table_entry">
+                <th width="8%">{{ rom.device }}</th>
+                <th width="16%">{{ rom.name }}</th>
+                <th width="12%">{{ rom.ota_id }}</th>
+                <th width="12%">{{ rom.version }}</th>
+                <th width="12%">{{ rom.date }}</th>
+                <th width="24%">
+                    <a href="{{ rom.download_url }}">
+                    {{ rom.download_url }}
+                    </a>
+                </th>
+                {% if user.username %}
+                <th>
+                    <a href="/roms/{{ rom.id }}/edit/">Edit</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/roms/{{ rom.id }}/delete/">Del</a>
+                </th>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </thead>
+    </table>
+</p>
+{% elif no_rom_msg %}
+    <p>{{ no_rom_msg }}</p>
+{% endif %}
+

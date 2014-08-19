@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>NEXELL OTA Update Server</title>
+        <link rel="stylesheet" href="/site_media/style.css" type="text/css" />
+    </head>
+    <body>
+        <a href="/"><h1 class="title">NEXELL OTA Update Server</h1></a>
+        {% if user.username %}
+        <p>
+            <table class="upper_table">
+                <th><a href="/user/{{ user.username }}/" style="text-decoration:none">Hi, {{ user.username }}</a></th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>
+                    <a href="/logout/">logout</a>
+                </th>
+            </table>
+        </p>
+        {% elif no_rom_msg %}
+        <p>
+            <table class="upper_table">
+                <th><a href="/login/">login</a></th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th><a href="/register/">register</a></th>
+            </table>
+        </p>
+        {% endif %}
+        <h2>
+            {% block head %}
+            {% endblock %}
+        </h2>
+        {% block content %}
+        {% endblock %}
+        {% include "rom_list.html" %}
+    </body>
+</html>

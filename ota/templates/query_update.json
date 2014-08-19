@@ -1,0 +1,8 @@
+{
+    "rom":"{{ name }}",
+    "url":"{{ download_url }}",
+    "md5":"{{ md5sum }}",
+    "version":"{{ version }}",
+    "date":"{{ date }}",
+    "changelog":"{{ changelog }}"
+}
